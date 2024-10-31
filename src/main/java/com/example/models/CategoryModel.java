@@ -18,7 +18,7 @@ public class CategoryModel implements Serializable{
 	@Id
 	private Long categoryId;
 	@NotEmpty(message="khong duoc bo trong")
-	private String categoryname;
+	private String name;
 	private String images;
 	private int status;
 	

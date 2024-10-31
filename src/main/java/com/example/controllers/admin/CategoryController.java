@@ -82,8 +82,9 @@ public class CategoryController {
 		return "views/admin/list";
 	}
 
-	@GetMapping("edit/{categoryId}")
+	@GetMapping("/edit/{categoryId}")
 	public ModelAndView edit(ModelMap model, @PathVariable("categoryId") Long categoryId) {
+		System.out.println("Hung code");
 	    Optional<CategoryEntity> optCategory = categoryService.findById(categoryId);
 	    CategoryModel cateModel = new CategoryModel();
 	    // kiểm tra sự tồn tại của category

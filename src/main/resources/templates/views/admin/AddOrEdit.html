@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{views/admin/layout_admin}">
-<body layout:fragment="content">>
-<div class="col-6 offset-3 mt-4" >
+<body layout:fragment="content">
+<div class="col-6 offset-3 mt-4">
     <form th:action="@{/admin/categories/saveOrUpdate}" method="POST" th:object="${category}">
         <div class="card">
             <div class="card-header">
@@ -13,17 +13,21 @@
                     <input type="hidden" th:field="*{isEdit}">
                     <input type="text" readonly="readonly" class="form-control" th:field="*{categoryId}" id="categoryId" name="categoryId"
                            aria-describedby="categoryIdHelp" placeholder="Category ID">
-                    <div th:if="${#fields.hasErrors('categoryId')}" id="categoryIdHelp" class="form-text text-muted"><span class="text-danger">Category ID is required!</span></div>
+                    <div th:if="${#fields.hasErrors('categoryId')}" id="categoryIdHelp" class="form-text text-muted">
+                        <span class="text-danger">Category ID is required!</span>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Category Name:</label>
                     <input type="text" class="form-control" th:field="*{name}" id="name" name="name"
                            aria-describedby="nameHelp" placeholder="Category Name">
-                    <div th:if="${#fields.hasErrors('name')}" id="nameHelp" class="form-text text-muted"><span class="text-danger">Category
+                    <div th:if="${#fields.hasErrors('name')}" id="nameHelp" class="form-text text-muted">
+                        <span class="text-danger">Category Name is required!</span>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>
 </div>
 </body>
